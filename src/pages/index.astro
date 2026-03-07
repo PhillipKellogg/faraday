@@ -3,6 +3,7 @@ import "../styles/global.css"
 import Hero from "../components/Hero.jsx"
 import About from "../components/About.jsx"
 import Experience from "../components/Experience.jsx"
+import Projects from "../components/Projects.jsx"
 import Skills from "../components/Skills.jsx"
 import Footer from "../components/Footer.jsx"
 ---
@@ -12,6 +13,7 @@ import Footer from "../components/Footer.jsx"
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.svg" />
     <meta name="description" content="Phil Kellogg — Fullstack engineer and frontend specialist. Vue.js, React, Laravel, Node.js. Based in the Greater Toronto Area." />
     <meta name="theme-color" content="#dfe3ee" />
     <title>Phil Kellogg | FaradayDev</title>
@@ -21,6 +23,8 @@ import Footer from "../components/Footer.jsx"
     <meta property="og:title" content="Phil Kellogg — Frontend Specialist" />
     <meta property="og:description" content="Fullstack engineer with a deep frontend specialization. Vue.js, React, Laravel, Node.js. Based in the Greater Toronto Area." />
     <meta property="og:site_name" content="FaradayDev" />
+    <meta property="og:image" content="https://faradaydev.ca/og.svg" />
+    <meta name="twitter:image" content="https://faradaydev.ca/og.svg" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Phil Kellogg — Frontend Specialist" />
@@ -32,6 +36,7 @@ import Footer from "../components/Footer.jsx"
       <Hero client:load />
       <About />
       <Experience client:visible />
+      <Projects />
       <Skills />
       <Footer />
     </main>

@@ -7,7 +7,7 @@ const categories = [
   {
     label: "Backend",
     accent: "#7c3aed",
-    skills: ["Laravel", "PHP", "Node.js", "Express"],
+    skills: ["Laravel", "PHP", "Node.js", "Express", "Python", "FastAPI"],
   },
   {
     label: "Testing",
