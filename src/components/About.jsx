@@ -10,7 +10,7 @@ export default function About() {
           , and the founder of{" "}
           <span className="font-semibold" style={{ color: "#4f72f5" }}>FaradayDev</span>
           {" "} my independent software contracting practice. I have a deep specialization
-          in frontend architecture, with 5+ years working across both{" "}
+          in frontend architecture, with 6+ years working across both{" "}
           <span className="font-semibold" style={{ color: "#4f72f5" }}>Vue.js</span>{" "}
           and{" "}
           <span className="font-semibold" style={{ color: "#4f72f5" }}>React</span>
