@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #dfe3ee;
+  --shadow-dark: #bcc0cb;
+  --shadow-light: #ffffff;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --accent: #4f72f5;
+}
+
+html, body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+astro-island {
+  display: block;
+}
+
+/* ── Core neumorphic utilities ──────────────────────────────── */
+
+.neu-raised {
+  background: var(--bg);
+  box-shadow: 8px 8px 20px var(--shadow-dark), -8px -8px 20px var(--shadow-light);
+  transition: box-shadow 0.25s ease;
+}
+
+.neu-raised-sm {
+  background: var(--bg);
+  box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
+  transition: box-shadow 0.2s ease;
+}
+
+.neu-inset {
+  background: var(--bg);
+  box-shadow: inset 4px 4px 10px var(--shadow-dark), inset -4px -4px 10px var(--shadow-light);
+}
+
+.neu-btn {
+  background: var(--bg);
+  box-shadow: 5px 5px 12px var(--shadow-dark), -5px -5px 12px var(--shadow-light);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.neu-btn:hover {
+  box-shadow: 7px 7px 16px var(--shadow-dark), -7px -7px 16px var(--shadow-light);
+  transform: translateY(-1px);
+}
+
+.neu-btn:active {
+  box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light);
+  transform: translateY(0);
+}
+
+.neu-btn-accent {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 5px 5px 12px #3a57cc, -3px -3px 10px rgba(120,148,255,0.4);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.neu-btn-accent:hover {
+  box-shadow: 7px 7px 16px #3552c8, -4px -4px 12px rgba(130,155,255,0.45);
+  transform: translateY(-1px);
+}
+
+.neu-btn-accent:active {
+  box-shadow: inset 3px 3px 8px #3552c8, inset -2px -2px 6px rgba(120,148,255,0.35);
+  transform: translateY(0);
+}
+
+/* ── Entrance animations ────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up-1 { animation: fadeUp 0.55s ease 0.05s forwards; opacity: 0; }
+.fade-up-2 { animation: fadeUp 0.55s ease 0.18s forwards; opacity: 0; }
+.fade-up-3 { animation: fadeUp 0.55s ease 0.30s forwards; opacity: 0; }
+.fade-up-4 { animation: fadeUp 0.55s ease 0.42s forwards; opacity: 0; }
