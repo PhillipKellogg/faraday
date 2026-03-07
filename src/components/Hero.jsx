@@ -40,6 +40,8 @@ export default function Hero() {
       <div className="fade-up-4 flex flex-wrap gap-3 pt-1">
         <a
           href="https://github.com/phillipkellogg"
+          target="_blank"
+          rel="noopener noreferrer"
           className="neu-btn-accent inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold"
         >
           GitHub
@@ -49,6 +51,8 @@ export default function Hero() {
         </a>
         <a
           href="https://www.linkedin.com/in/phillipkellogg"
+          target="_blank"
+          rel="noopener noreferrer"
           className="neu-btn inline-flex items-center px-6 py-2.5 rounded-xl text-sm font-semibold text-slate-700"
         >
           LinkedIn
