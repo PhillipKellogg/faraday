@@ -50,7 +50,7 @@ export default function Hero() {
           </svg>
         </a>
         <a
-          href="https://www.linkedin.com/in/phillipkellogg"
+          href="https://www.linkedin.com/in/phillip-kellogg"
           target="_blank"
           rel="noopener noreferrer"
           className="neu-btn inline-flex items-center px-6 py-2.5 rounded-xl text-sm font-semibold text-slate-700"
