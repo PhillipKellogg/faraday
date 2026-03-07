@@ -43,8 +43,17 @@ npm run preview   # preview the production build locally
 Multi-stage Docker build — Node for the build step, nginx:alpine to serve. Cloudflare handles SSL termination and CDN caching at the edge.
 
 ```bash
-# On your server
+# Build and start (or rebuild after changes)
+docker compose up -d --build
+
+# Pull latest + rebuild in one line
 git pull && docker compose up -d --build
+
+# Stop
+docker compose down
+
+# View logs
+docker compose logs -f
 ```
 
 ---
