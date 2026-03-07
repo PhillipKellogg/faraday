@@ -1,4 +1,4 @@
-# faraday.dev — Phil Kellogg's Portfolio
+# My Portfolio - [FaradayDev](https://faradaydev.ca)
 
 Personal portfolio site built with Astro, React, and Tailwind CSS v4. Statically generated and served via nginx in Docker, proxied through Cloudflare.
 
