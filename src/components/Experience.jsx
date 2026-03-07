@@ -6,7 +6,7 @@ export default function Experience() {
     {
       company: "CIBC",
       role: "Senior Application Developer",
-      years: "Mar 2026 — Present",
+      years: "Feb 2026 — Present",
       summary:
         "Working on a new product launch within a large enterprise engineering org. Details to come.",
     },
