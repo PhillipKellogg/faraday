@@ -27,7 +27,7 @@ export default function Hero() {
         </h1>
         <p className="text-lg text-slate-500 font-normal mt-3">
           Senior Software Engineer &nbsp;&mdash;&nbsp;{" "}
-          <span style={{ color: "#4f72f5" }} className="font-medium">Frontend Specialist</span>
+          <span style={{ color: "#4f72f5" }} className="font-medium">Founder of FaradayDev</span>
         </p>
       </div>
 
