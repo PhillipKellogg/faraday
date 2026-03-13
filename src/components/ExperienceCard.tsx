@@ -1,8 +1,20 @@
-import { useState } from "react"
+import { useState } from 'react';
 
-export default function ExperienceCard({ job }) {
-  const [open, setOpen] = useState(false)
-  const hasDetails = job.details?.length > 0
+interface Job {
+  company: string;
+  role: string;
+  years: string;
+  summary: string;
+  details?: string[];
+}
+
+interface ExperienceCardProps {
+  job: Job;
+}
+
+export default function ExperienceCard({ job }: ExperienceCardProps) {
+  const [open, setOpen] = useState(false);
+  const hasDetails = (job.details?.length ?? 0) > 0;
 
   return (
     <div className="relative flex gap-2 sm:gap-7">
@@ -12,22 +24,27 @@ export default function ExperienceCard({ job }) {
         <div
           className="w-3 h-3 rounded-full z-10 shrink-0"
           style={{
-            background: "#4f72f5",
-            boxShadow: "0 0 0 4px rgba(79,114,245,0.18), 2px 2px 5px #bcc0cb, -2px -2px 5px #ffffff"
+            background: '#4f72f5',
+            boxShadow: '0 0 0 4px rgba(79,114,245,0.18), 2px 2px 5px #bcc0cb, -2px -2px 5px #ffffff',
           }}
         />
         <div
           className="w-px flex-1 mt-2"
-          style={{ background: "linear-gradient(to bottom, #c5c9d4, transparent)" }}
+          style={{ background: 'linear-gradient(to bottom, #c5c9d4, transparent)' }}
         />
       </div>
 
       {/* Card */}
       <div
         className={`flex-1 mb-8 rounded-2xl overflow-hidden transition-all duration-200 ${
-          hasDetails ? "cursor-pointer" : ""
+          hasDetails ? 'cursor-pointer' : ''
         } neu-raised`}
+        role="button"
+        tabIndex={0}
         onClick={() => hasDetails && setOpen(!open)}
+        onKeyDown={(e) => {
+          if (hasDetails && (e.key === 'Enter' || e.key === ' ')) setOpen(!open);
+        }}
       >
         <div className="p-5 sm:p-6">
 
@@ -37,7 +54,7 @@ export default function ExperienceCard({ job }) {
               <h3 className="font-bold text-slate-900 text-base sm:text-lg leading-snug">
                 {job.company}
               </h3>
-              <p className="text-sm mt-0.5 font-medium" style={{ color: "#4f72f5" }}>
+              <p className="text-sm mt-0.5 font-medium" style={{ color: '#4f72f5' }}>
                 {job.role}
               </p>
             </div>
@@ -49,12 +66,14 @@ export default function ExperienceCard({ job }) {
               {hasDetails && (
                 <div
                   className="w-6 h-6 rounded-full flex items-center justify-center neu-raised-sm transition-all duration-200"
-                  style={open ? { boxShadow: "inset 2px 2px 5px #bcc0cb, inset -2px -2px 5px #ffffff" } : {}}
+                  style={open ? { boxShadow: 'inset 2px 2px 5px #bcc0cb, inset -2px -2px 5px #ffffff' } : {}}
                 >
                   <svg
-                    className={`w-3 h-3 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-                    style={{ color: "#4f72f5" }}
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    className={`w-3 h-3 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+                    style={{ color: '#4f72f5' }}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -72,16 +91,16 @@ export default function ExperienceCard({ job }) {
 
         {/* Expandable details */}
         {hasDetails && (
-          <div className={`grid transition-all duration-300 ease-in-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+          <div className={`grid transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
             <div className="overflow-hidden">
               <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 space-y-2.5">
                 <div
                   className="h-px mb-4"
-                  style={{ background: "linear-gradient(to right, rgba(79,114,245,0.3), transparent)" }}
+                  style={{ background: 'linear-gradient(to right, rgba(79,114,245,0.3), transparent)' }}
                 />
-                {job.details.map((item, i) => (
-                  <div key={i} className="flex gap-3 text-sm text-slate-600 leading-relaxed">
-                    <span className="shrink-0 font-bold text-xs mt-0.5" style={{ color: "#4f72f5" }}>▸</span>
+                {job.details!.map((item) => (
+                  <div key={item} className="flex gap-3 text-sm text-slate-600 leading-relaxed">
+                    <span className="shrink-0 font-bold text-xs mt-0.5" style={{ color: '#4f72f5' }}>▸</span>
                     <span>{item}</span>
                   </div>
                 ))}
@@ -92,5 +111,5 @@ export default function ExperienceCard({ job }) {
 
       </div>
     </div>
-  )
+  );
 }

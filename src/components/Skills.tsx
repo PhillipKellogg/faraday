@@ -1,30 +1,36 @@
-const categories = [
+interface Category {
+  label: string;
+  accent: string;
+  skills: string[];
+}
+
+const categories: Category[] = [
   {
-    label: "Frontend",
-    accent: "#4f72f5",
-    skills: ["Vue 2/3", "React", "Nuxt", "Pinia", "TypeScript", "Tailwind", "PrimeVue", "SCSS"],
+    label: 'Frontend',
+    accent: '#4f72f5',
+    skills: ['Vue 2/3', 'React', 'Nuxt', 'Pinia', 'TypeScript', 'Tailwind', 'PrimeVue', 'SCSS'],
   },
   {
-    label: "Backend",
-    accent: "#7c3aed",
-    skills: ["Laravel", "PHP", "Node.js", "Express", "Python", "FastAPI"],
+    label: 'Backend',
+    accent: '#7c3aed',
+    skills: ['Laravel', 'PHP', 'Node.js', 'Express', 'Python', 'FastAPI'],
   },
   {
-    label: "Testing",
-    accent: "#059669",
-    skills: ["Vitest", "Jest", "Cypress", "Playwright"],
+    label: 'Testing',
+    accent: '#059669',
+    skills: ['Vitest', 'Jest', 'Cypress', 'Playwright'],
   },
   {
-    label: "Databases",
-    accent: "#d97706",
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Firestore", "Redis"],
+    label: 'Databases',
+    accent: '#d97706',
+    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firestore', 'Redis'],
   },
   {
-    label: "DevOps",
-    accent: "#dc2626",
-    skills: ["Docker", "Linux", "GitHub Actions", "AWS"],
+    label: 'DevOps',
+    accent: '#dc2626',
+    skills: ['Docker', 'Linux', 'GitHub Actions', 'AWS'],
   },
-]
+];
 
 export default function Skills() {
   return (
@@ -54,5 +60,5 @@ export default function Skills() {
         ))}
       </div>
     </section>
-  )
+  );
 }

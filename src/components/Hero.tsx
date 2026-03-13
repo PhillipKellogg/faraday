@@ -20,21 +20,23 @@ export default function Hero() {
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-none">
           <span
             className="text-transparent bg-clip-text"
-            style={{ backgroundImage: "linear-gradient(135deg, #1e293b 0%, #4f72f5 100%)" }}
+            style={{ backgroundImage: 'linear-gradient(135deg, #1e293b 0%, #4f72f5 100%)' }}
           >
             Phil Kellogg
           </span>
         </h1>
         <p className="text-lg text-slate-500 font-normal mt-3">
-          Senior Software Engineer &nbsp;&mdash;&nbsp;{" "}
-          <span style={{ color: "#4f72f5" }} className="font-medium">Founder of FaradayDev</span>
+          Senior Software Engineer &nbsp;&mdash;&nbsp;
+          {' '}
+          <span style={{ color: '#4f72f5' }} className="font-medium">Founder of FaradayDev</span>
         </p>
       </div>
 
       <p className="fade-up-3 text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
         I architect scalable frontend systems with Vue 3, Nuxt, and TypeScript,
         and contribute across the full stack with Laravel and Node.js.
-        I have a thing for turning legacy codebases into something you're actually proud to work in.
+        I have a thing for turning legacy codebases into something you&apos;re
+        actually proud to work in.
       </p>
 
       <div className="fade-up-4 flex flex-wrap gap-3 pt-1">
@@ -66,5 +68,5 @@ export default function Hero() {
       </div>
 
     </section>
-  )
+  );
 }

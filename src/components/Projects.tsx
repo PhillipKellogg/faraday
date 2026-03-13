@@ -1,26 +1,41 @@
-const projects = [
+interface ProjectLink {
+  label: string;
+  href: string;
+}
+
+interface Project {
+  name: string;
+  status: string;
+  tagline: string;
+  description: string;
+  goals: string[];
+  stack: string[];
+  links: ProjectLink[];
+}
+
+const projects: Project[] = [
   {
-    name: "Memorise",
-    status: "Work in Progress",
-    tagline: "Self-hosted spaced repetition — like Anki, but open and community-driven.",
+    name: 'Memorise',
+    status: 'Work in Progress',
+    tagline: 'Self-hosted spaced repetition — like Anki, but open and community-driven.',
     description:
-      "A full-stack monorepo application for spaced repetition learning, built as a more open alternative to Anki. The goal is public deck sharing — anyone can browse and study community decks without an account — with optional login to track progress, save study settings, and publish your own decks to the community library.",
+      'A full-stack monorepo application for spaced repetition learning, built as a more open alternative to Anki. The goal is public deck sharing — anyone can browse and study community decks without an account — with optional login to track progress, save study settings, and publish your own decks to the community library.',
     goals: [
-      "Public deck browsing — no account needed to view or study shared decks",
-      "User accounts with saved study preferences and personal progress tracking",
-      "Community deck library — create, import, and share decks with others",
-      "Anki .apkg import support for migrating existing decks",
-      "Image and audio card support via MinIO object storage (coming soon)",
-      "Redis caching layer for performance at scale (coming soon)",
+      'Public deck browsing — no account needed to view or study shared decks',
+      'User accounts with saved study preferences and personal progress tracking',
+      'Community deck library — create, import, and share decks with others',
+      'Anki .apkg import support for migrating existing decks',
+      'Image and audio card support via MinIO object storage (coming soon)',
+      'Redis caching layer for performance at scale (coming soon)',
     ],
-    stack: ["React 18", "TypeScript", "FastAPI", "Python", "PostgreSQL", "SQLAlchemy", "SM-2", "Docker", "Cloudflare Tunnel"],
+    stack: ['React 18', 'TypeScript', 'FastAPI', 'Python', 'PostgreSQL', 'SQLAlchemy', 'SM-2', 'Docker', 'Cloudflare Tunnel'],
     links: [
-      { label: "Live", href: "https://memorise.faradaydev.ca" },
-      { label: "GitHub", href: "https://github.com/PhillipKellogg/memorise" },
-      { label: "API Docs", href: "https://memorise-api.faradaydev.ca/docs" },
+      { label: 'Live', href: 'https://memorise.faradaydev.ca' },
+      { label: 'GitHub', href: 'https://github.com/PhillipKellogg/memorise' },
+      { label: 'API Docs', href: 'https://memorise-api.faradaydev.ca/docs' },
     ],
   },
-]
+];
 
 export default function Projects() {
   return (
@@ -50,12 +65,12 @@ export default function Projects() {
                     <h3 className="font-bold text-slate-900 text-lg">{project.name}</h3>
                     <span
                       className="text-xs font-semibold px-2.5 py-0.5 rounded-full border"
-                      style={{ color: "#d97706", background: "rgba(217,119,6,0.08)", borderColor: "rgba(217,119,6,0.25)" }}
+                      style={{ color: '#d97706', background: 'rgba(217,119,6,0.08)', borderColor: 'rgba(217,119,6,0.25)' }}
                     >
                       {project.status}
                     </span>
                   </div>
-                  <p className="text-sm mt-0.5 font-medium" style={{ color: "#4f72f5" }}>
+                  <p className="text-sm mt-0.5 font-medium" style={{ color: '#4f72f5' }}>
                     {project.tagline}
                   </p>
                 </div>
@@ -70,7 +85,9 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="neu-raised-sm text-xs font-semibold px-3 py-1.5 rounded-lg text-slate-600 transition-opacity hover:opacity-70"
                     >
-                      {link.label} ↗
+                      {link.label}
+                      {' '}
+                      ↗
                     </a>
                   ))}
                 </div>
@@ -83,9 +100,9 @@ export default function Projects() {
 
               {/* Goals */}
               <div className="space-y-1.5">
-                {project.goals.map((goal, i) => (
-                  <div key={i} className="flex gap-2.5 text-sm text-slate-500 leading-relaxed">
-                    <span className="shrink-0 font-bold text-xs mt-0.5" style={{ color: "#4f72f5" }}>▸</span>
+                {project.goals.map((goal) => (
+                  <div key={goal} className="flex gap-2.5 text-sm text-slate-500 leading-relaxed">
+                    <span className="shrink-0 font-bold text-xs mt-0.5" style={{ color: '#4f72f5' }}>▸</span>
                     <span>{goal}</span>
                   </div>
                 ))}
@@ -106,5 +123,5 @@ export default function Projects() {
       </div>
 
     </section>
-  )
+  );
 }
