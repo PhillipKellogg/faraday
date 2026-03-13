@@ -22,8 +22,9 @@ export default function About() {
           {' '}
           <span className="font-semibold" style={{ color: '#4f72f5' }}>React</span>
           {' '}
-          , handeling large-scale SPA migrations, building component systems from scratch,
-          and owning the full frontend from routing and state to performance and testing.
+          , handeling large-scale MPA (Multi-Page Application) migrations, building component
+          systems from scratch, and owning the full frontend from routing and state to
+          performance and testing.
         </p>
       </div>
     </section>
