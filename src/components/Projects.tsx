@@ -93,12 +93,10 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Description */}
               <p className="text-slate-600 text-sm leading-relaxed">
                 {project.description}
               </p>
 
-              {/* Goals */}
               <div className="space-y-1.5">
                 {project.goals.map((goal) => (
                   <div key={goal} className="flex gap-2.5 text-sm text-slate-500 leading-relaxed">

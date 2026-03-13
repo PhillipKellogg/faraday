@@ -19,7 +19,6 @@ export default function ExperienceCard({ job }: ExperienceCardProps) {
   return (
     <div className="relative flex gap-2 sm:gap-7">
 
-      {/* Timeline dot + spine */}
       <div className="flex flex-col items-center shrink-0 pt-6">
         <div
           className="w-3 h-3 rounded-full z-10 shrink-0"
@@ -34,7 +33,6 @@ export default function ExperienceCard({ job }: ExperienceCardProps) {
         />
       </div>
 
-      {/* Card */}
       <div
         className={`flex-1 mb-8 rounded-2xl overflow-hidden transition-all duration-200 ${
           hasDetails ? 'cursor-pointer' : ''
@@ -48,7 +46,6 @@ export default function ExperienceCard({ job }: ExperienceCardProps) {
       >
         <div className="p-5 sm:p-6">
 
-          {/* Header */}
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <h3 className="font-bold text-slate-900 text-base sm:text-lg leading-snug">
@@ -82,14 +79,12 @@ export default function ExperienceCard({ job }: ExperienceCardProps) {
             </div>
           </div>
 
-          {/* Summary */}
           <p className="mt-3 text-slate-500 text-sm leading-relaxed">
             {job.summary}
           </p>
 
         </div>
 
-        {/* Expandable details */}
         {hasDetails && (
           <div className={`grid transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
             <div className="overflow-hidden">
