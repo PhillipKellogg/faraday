@@ -15,6 +15,25 @@ interface Project {
 
 const projects: Project[] = [
   {
+    name: 'PropertyLeaf',
+    status: 'Work in Progress',
+    tagline: 'Residential property management for Ontario landlords.',
+    description:
+      'A full-stack property management platform built for Ontario landlords. PropertyLeaf handles the full rental lifecycle — from onboarding units and tenants to tracking rent, generating legally compliant LTB forms, and giving tenants their own portal for documents and maintenance.',
+    goals: [
+      'Manage rental properties and units, track tenants and lease dates',
+      'Log and track rent payments, flag late/outstanding balances',
+      'Generate and e-sign Ontario LTB forms (N4) and Standard Lease agreements with dual landlord + tenant signing',
+      'Tenant portal for viewing documents, signing leases, and submitting maintenance requests',
+      'Dashboard with revenue/occupancy charts, expiring lease alerts, and per-unit profit breakdown',
+      'Annual CSV export for tax/accounting',
+    ],
+    stack: ['Vue 3', 'TypeScript', 'TanStack Query', 'Tailwind CSS', 'Vue I18n', 'Fastify', 'Drizzle ORM', 'PostgreSQL', 'MinIO', 'Stripe', 'pdf-lib', 'Docker', 'Cloudflare Tunnel'],
+    links: [
+      { label: 'Live', href: 'https://leaf.faradaydev.ca' },
+    ],
+  },
+  {
     name: 'Memorise',
     status: 'Work in Progress',
     tagline: 'Self-hosted spaced repetition — like Anki, but open and community-driven.',
@@ -53,30 +72,18 @@ export default function Projects() {
         {projects.map((project) => (
           <div key={project.name} className="neu-raised rounded-2xl overflow-hidden">
 
-            {/* Top accent */}
-            <div className="h-px bg-gradient-to-r from-blue-500/50 via-blue-400/20 to-transparent" />
-
             <div className="p-5 sm:p-6 space-y-4">
 
               {/* Header */}
-              <div className="flex items-start justify-between gap-3 flex-wrap">
-                <div>
-                  <div className="flex items-center gap-2.5 flex-wrap">
-                    <h3 className="font-bold text-slate-900 text-lg">{project.name}</h3>
-                    <span
-                      className="text-xs font-semibold px-2.5 py-0.5 rounded-full border"
-                      style={{ color: '#d97706', background: 'rgba(217,119,6,0.08)', borderColor: 'rgba(217,119,6,0.25)' }}
-                    >
-                      {project.status}
-                    </span>
-                  </div>
-                  <p className="text-sm mt-0.5 font-medium" style={{ color: '#4f72f5' }}>
-                    {project.tagline}
-                  </p>
-                </div>
-
-                {/* Links */}
-                <div className="flex gap-2 flex-wrap">
+              <div>
+                <div className="flex items-center gap-2.5 flex-wrap">
+                  <h3 className="font-bold text-slate-900 text-lg">{project.name}</h3>
+                  <span
+                    className="text-xs font-semibold px-2.5 py-0.5 rounded-full border"
+                    style={{ color: '#d97706', background: 'rgba(217,119,6,0.08)', borderColor: 'rgba(217,119,6,0.25)' }}
+                  >
+                    {project.status}
+                  </span>
                   {project.links.map((link) => (
                     <a
                       key={link.label}
@@ -91,6 +98,9 @@ export default function Projects() {
                     </a>
                   ))}
                 </div>
+                <p className="text-sm mt-0.5 font-medium" style={{ color: '#4f72f5' }}>
+                  {project.tagline}
+                </p>
               </div>
 
               <p className="text-slate-600 text-sm leading-relaxed">
